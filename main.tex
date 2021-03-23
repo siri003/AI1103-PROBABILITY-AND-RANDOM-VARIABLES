@@ -51,7 +51,9 @@
 \renewcommand\thesectiondis{\arabic{section}}
 \renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
 \renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
-
+\newcommand*{\permcomb}[4][0mu]{{{}^{#3}\mkern#1#2_{#4}}}
+\newcommand*{\perm}[1][-3mu]{\permcomb[#1]{P}}
+\newcommand*{\comb}[1][-1mu]{\permcomb[#1]{C}}
 
 \hyphenation{op-tical net-works semi-conduc-tor}
 \def\inputGnumericTable{}                                 %%
@@ -144,15 +146,15 @@ q=$\frac{1}{5}$(probability that a student cannot swim)
 \\
 From Bernoulli's distribution we know that,
 \begin{equation}
-    P(X=r)={n\choose r}(p)^{r}(q)^{n-r}
+    P(X=r)=\comb{n}{r}(p)^{r}(q)^{n-r}
 \end{equation}
 \begin{equation}
 \begin{split}
-   P(X=4) & ={5\choose 4}(p)^{4}(q)^{1}
-   \\& = {5\choose 4}\left(\frac{4}{5}\right)^{4}\left(\frac{1}{5}\right)^{1}
-   \\& ={5\choose 1}\left(\frac{4}{5}\right)^{4}\left(\frac{1}{5}\right)
+   P(X=4) & =\comb{5}{4}(p)^{4}(q)^{1}
+   \\& = \comb{5}{4}\left(\frac{4}{5}\right)^{4}\left(\frac{1}{5}\right)^{1}
+   \\& =\comb{5}{1}\left(\frac{4}{5}\right)^{4}\left(\frac{1}{5}\right)
 \end{split}
 \end{equation}
 \\
-Therefore, the desired probability is ${5\choose 1}\left(\frac{4}{5}\right)^{4}\left(\frac{1}{5}\right)$= 0.4096.
+Therefore, the desired probability is $\comb{5}{1}\left(\frac{4}{5}\right)^{4}\left(\frac{1}{5}\right)$= 0.4096.
 \end{document}
